@@ -1,0 +1,45 @@
+{
+  "name": "postybirb-error-server",
+  "version": "1.0.0",
+  "description": "A server used to log uncaught errors that may make it through zonejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "now && now alias",
+    "start": "node index.js"
+  },
+  "now": {
+    "alias": "postybirb-error-server",
+    "name": "postybirb-error-server",
+    "files": [
+      "index.js",
+      "package.json"
+    ],
+    "scale": {
+      "sfo1": {
+        "min": 0,
+        "max": 1
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvdicarlo/postybirb-error-server.git"
+  },
+  "keywords": [
+    "postybirb",
+    "error"
+  ],
+  "author": "Michael DiCarlo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mvdicarlo/postybirb-error-server/issues"
+  },
+  "homepage": "https://github.com/mvdicarlo/postybirb-error-server#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-rate-limit": "^3.3.2",
+    "winston": "^3.1.0"
+  }
+}
