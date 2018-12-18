@@ -10,15 +10,13 @@ const {
 
 const {
     combine,
-    timestamp,
-    prettyPrint,
+    splat,
+    simple
 } = format;
 
 logger.configure({
-    level: 'error',
     format: combine(
-        timestamp(),
-        prettyPrint(),
+        simple()
     ),
     transports: [
         new transports.Console({
@@ -53,7 +51,8 @@ app.get('/', (req, res) => {
 app.post('/log/error', (req, res) => {
   if (req.body.errorLog) {
     try {
-      logger.log('error', '/log/error', req.body.errorLog);
+      const log = req.body.errorLog;
+      logger.error(JSON.stringify(log, null, 1));
       res.status(200).send('Log accepted');
     } catch (err) {
       logger.log('error', '/log/error exception', err);
@@ -65,5 +64,5 @@ app.post('/log/error', (req, res) => {
 });
 
 app.listen(3000, () => {
-    logger.info('Server listening on port 3000');
+  logger.info('Server listening on port 3000');
 });
