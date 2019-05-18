@@ -4,23 +4,8 @@
   "description": "A server used to log uncaught errors that may make it through zonejs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "now && now alias",
-    "start": "node index.js"
-  },
-  "now": {
-    "alias": "postybirb-error-server",
-    "name": "postybirb-error-server",
-    "files": [
-      "index.js",
-      "package.json"
-    ],
-    "scale": {
-      "sfo1": {
-        "min": 0,
-        "max": 1
-      }
-    }
+    "start": "node ."
   },
   "repository": {
     "type": "git",

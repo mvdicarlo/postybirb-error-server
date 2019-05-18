@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "alias": "postybirb-error-server",
+  "name": "postybirb-error-server",
+  "builds": [{
+    "src": "index.js",
+    "use": "@now/node"
+  }],
+  "regions": ["sfo1"],
+  "public": false
+}
