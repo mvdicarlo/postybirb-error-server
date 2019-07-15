@@ -3,7 +3,7 @@
   "alias": "postybirb-error-server",
   "name": "postybirb-error-server",
   "builds": [
-    { "src": "index.js", "use": "@now/node-server" }
+    { "src": "index.js", "use": "@now/node" }
   ],
   "routes": [
     { "src": "/(.*)", "dest": "/index.js" }
