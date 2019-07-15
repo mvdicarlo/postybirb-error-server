@@ -28,7 +28,8 @@ const pong = (req, res) => send(res, 200, 'pong');
 
 const log = async (req, res) => {
   const body = await json(req);
-  logger.info(JSON.stringify(body.errorLog, null, 1));
+  if (body && body.errorLog && body.errorLog.version)
+    logger.info(JSON.stringify(body.errorLog, null, 1));
   send(res, 200, 'Log accepted');
 }
 
